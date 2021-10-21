@@ -1,0 +1,14 @@
+.koStage {
+  opacity: 0.8;
+}
+
+.layout {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(10, 30px);
+}
+
+.layout-item {
+  height: 28px;
+  border: 1px solid #000;
+}

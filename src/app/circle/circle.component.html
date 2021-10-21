@@ -1,0 +1,18 @@
+<div class="">
+  <div class="container" style="margin-top: 20px;" #container>
+    <div class="layout">
+      <div class="layout-item" *ngFor="let row of rows; let index = index"></div>
+    </div>
+    <div class="koStage">
+      <ko-stage [config]="configStage" #stage>
+        <ko-layer>
+          <ko-circle [config]="configCircleStage" #circle></ko-circle>
+          <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
+          <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
+          <!-- <ko-circle [config]="configCircle" (click)="handleClick($event)" (tap)="over($event)" #circle></ko-circle> -->
+        </ko-layer>
+      </ko-stage>
+      <button (click)="handleClick($event)">Save</button>
+    </div>
+  </div>
+</div>

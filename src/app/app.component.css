@@ -1,0 +1,14 @@
+.menu {
+  display: flex;
+}
+
+.menu-item {
+  list-style-type: none;
+}
+
+.menu-item > a {
+  color: #fff;
+  background-color: #000;
+  padding: 10px;
+  text-decoration: none;
+}
