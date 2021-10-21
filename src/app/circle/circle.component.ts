@@ -7,9 +7,6 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
   templateUrl: './circle.component.html',
 })
 export class CircleComponent implements OnInit {
-  title = 'CodeSandbox';
-  @Input() public machineId!: number;
-
   public WIDTH = 300;
   public HEIGHT = 300;
   public RADIUS = 150;
@@ -19,8 +16,6 @@ export class CircleComponent implements OnInit {
   public rows = new Array(100);
   // public width = window.innerWidth;
   // public height = window.innerHeight;
-  //public stage;
-  //public layer;
 
   @ViewChild('stage', { static: false }) public stage!: KonvaComponent;
   @ViewChild('container', { static: false })
