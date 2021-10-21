@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="layout">
-    <div class="layout-item" *ngFor="let row of rows; let index = index"></div>
+  <div class="layout" style="grid-template-columns: repeat(10, 30px);">
+    <div class="layout-item" style="height: 28px;" *ngFor="let row of rows; let index = index"></div>
   </div>
   <div class="koStage">
     <ko-stage [config]="configStage" #stage>
       <ko-layer>
-        <ko-regular-polygon [config]="configSquareStage" #circle>
-        </ko-regular-polygon>
+        <ko-rect [config]="configSquareStage" #circle>
+        </ko-rect>
         <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
         <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
       </ko-layer>

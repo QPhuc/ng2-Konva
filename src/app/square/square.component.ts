@@ -31,11 +31,13 @@ export class SquareComponent implements OnInit {
   });
 
   public configSquareStage: Observable<any> = of({
-    x: this.WIDTH / 2,
-    y: this.HEIGHT / 2,
-    rotation: 45,
-    sides: 4,
-    radius: (this.RADIUS * 7) / 5,
+    x: 0,
+    y: 0,
+    width: this.WIDTH,
+    height: this.HEIGHT,
+    // rotation: 45,
+    // sides: 4,
+    // radius: (this.RADIUS * 7) / 5,
     fill: '#FFF2CC',
     stroke: '#56719D',
     strokeWidth: 1,
@@ -66,7 +68,7 @@ export class SquareComponent implements OnInit {
 
   dragmove(event: any) {
     var circle = event._stage.attrs;
-    
+
     if (
       circle.x - this.circleRadius < 0 ||
       circle.x + this.circleRadius > this.WIDTH
