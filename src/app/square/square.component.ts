@@ -71,18 +71,16 @@ export class SquareComponent implements OnInit {
 
     if (
       circle.x - this.circleRadius < 0 ||
-      circle.x + this.circleRadius > this.WIDTH
-    ) {
-      circle.x = this.lastPosX;
-    }
-    if (
+      circle.x + this.circleRadius > this.WIDTH ||
       circle.y - this.circleRadius < 0 ||
       circle.y + this.circleRadius > this.HEIGHT
     ) {
+      circle.x = this.lastPosX;
       circle.y = this.lastPosY;
     }
 
     this.lastPosX = circle.x;
     this.lastPosY = circle.y;
   }
+
 }

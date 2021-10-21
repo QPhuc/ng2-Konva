@@ -30,14 +30,11 @@ export class RectangleComponent implements OnInit {
     height: this.HEIGHT,
   });
 
-  public configSquareStage: Observable<any> = of({
+  public configRectangleStage: Observable<any> = of({
     x: 0,
     y: 0,
     width: this.WIDTH,
     height: this.HEIGHT,
-    // rotation: 45,
-    // sides: 4,
-    // radius: (this.RADIUS * 7) / 5,
     fill: '#FFF2CC',
     stroke: '#56719D',
     strokeWidth: 1,
@@ -60,7 +57,6 @@ export class RectangleComponent implements OnInit {
   });
 
   handleClick(event: any) {
-    // console.log('Hello Circle', event);
     var stage = this.stage.getStage();
     var cirles = stage.find('.myCircle');
     console.log(cirles);
@@ -71,14 +67,11 @@ export class RectangleComponent implements OnInit {
 
     if (
       circle.x - this.circleRadius < 0 ||
-      circle.x + this.circleRadius > this.WIDTH
-    ) {
-      circle.x = this.lastPosX;
-    }
-    if (
+      circle.x + this.circleRadius > this.WIDTH ||
       circle.y - this.circleRadius < 0 ||
       circle.y + this.circleRadius > this.HEIGHT
     ) {
+      circle.x = this.lastPosX;
       circle.y = this.lastPosY;
     }
 

@@ -30,7 +30,7 @@ export class DiamondComponent implements OnInit {
     height: this.HEIGHT,
   });
 
-  public configSquareStage: Observable<any> = of({
+  public configDiamondStage: Observable<any> = of({
     x: this.WIDTH / 2,
     y: this.HEIGHT / 2,
     sides: 4,
@@ -57,7 +57,6 @@ export class DiamondComponent implements OnInit {
   });
 
   handleClick(event: any) {
-    // console.log('Hello Circle', event);
     var stage = this.stage.getStage();
     var cirles = stage.find('.myCircle');
     console.log(cirles);
