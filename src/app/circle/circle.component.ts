@@ -5,7 +5,6 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 @Component({
   selector: 'app-circle',
   templateUrl: './circle.component.html',
-  styleUrls: ['./circle.component.css'],
 })
 export class CircleComponent implements OnInit {
   title = 'CodeSandbox';
