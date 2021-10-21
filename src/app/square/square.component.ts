@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 export class SquareComponent implements OnInit {
   public WIDTH = 300;
   public HEIGHT = 300;
-  public RADIUS = 150;
+  public RADIUS = this.WIDTH / 2;
   public circleRadius = 10;
   public lastPosX = 0;
   public lastPosY = 0;
@@ -30,15 +30,16 @@ export class SquareComponent implements OnInit {
     height: this.HEIGHT,
   });
 
-  public configCircleStage: Observable<any> = of({
+  public configSquareStage: Observable<any> = of({
     x: this.WIDTH / 2,
     y: this.HEIGHT / 2,
-    radius: this.RADIUS,
+    rotation: 45,
+    sides: 4,
+    radius: (this.RADIUS * 7) / 5,
     fill: '#FFF2CC',
     stroke: '#56719D',
     strokeWidth: 1,
     draggable: false,
-    name: 'myCircleStage',
   });
 
   public configCircle: Observable<any> = of({
@@ -65,32 +66,21 @@ export class SquareComponent implements OnInit {
 
   dragmove(event: any) {
     var circle = event._stage.attrs;
-
+    
     if (
-      (circle.x - this.WIDTH / 2) ** 2 + (circle.y - this.HEIGHT / 2) ** 2 >=
-      (this.RADIUS - this.circleRadius) ** 2
+      circle.x - this.circleRadius < 0 ||
+      circle.x + this.circleRadius > this.WIDTH
     ) {
       circle.x = this.lastPosX;
+    }
+    if (
+      circle.y - this.circleRadius < 0 ||
+      circle.y + this.circleRadius > this.HEIGHT
+    ) {
       circle.y = this.lastPosY;
     }
 
     this.lastPosX = circle.x;
     this.lastPosY = circle.y;
-  }
-
-  ngAfterViewInit() {
-    var that = this;
-
-    window.addEventListener('resize', function () {
-      console.log('## Start Resize ##');
-
-      var stage = that.stage.getStage();
-
-      var containerWidth = window.innerWidth;
-      var containerHeight = window.innerHeight;
-
-      stage.width(containerWidth);
-      stage.height(containerHeight);
-    });
   }
 }

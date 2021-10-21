@@ -5,7 +5,8 @@
   <div class="koStage">
     <ko-stage [config]="configStage" #stage>
       <ko-layer>
-        <ko-circle [config]="configCircleStage" #circle></ko-circle>
+        <ko-regular-polygon [config]="configSquareStage" #circle>
+        </ko-regular-polygon>
         <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
         <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
       </ko-layer>
