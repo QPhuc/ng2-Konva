@@ -12,3 +12,7 @@
   padding: 10px;
   text-decoration: none;
 }
+
+.menu-item > a:hover {
+  background-color: #999;
+}

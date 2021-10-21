@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 32px 0 0 32px;
+}
+
+.koStage {
+  opacity: 0.8;
+  display: flex;
+}
+
+.layout {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(10, 30px);
+}
+
+.layout-item {
+  height: 28px;
+  border: 1px solid #000;
+}
+
+.save-btn {
+  margin-left: 16px;
+  height: 32px;
+  width: 80px;
+  align-self: flex-end;
+}
