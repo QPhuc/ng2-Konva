@@ -1,7 +1,6 @@
 <div class="container">
-  <div class="layout" [ngStyle]="{ 'grid-template-columns': 'repeat(10,' + gridWidth + 'px)'}">
-    <div class="layout-item" [ngStyle]="{'height.px': gridWidth-2}" *ngFor=" let row of rows; let index=index">
-    </div>
+  <div class="layout" [ngStyle]="{ 'grid-template-columns': 'repeat(' + column + ',' + gridWidth + 'px)'}">
+    <div class="layout-item" [ngStyle]="{'height.px': gridWidth-2}" *ngFor=" let row of rows"></div>
   </div>
   <div class="koStage">
     <ko-stage [config]="configStage" #stage>
