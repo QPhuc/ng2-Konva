@@ -7,8 +7,8 @@
       <ko-layer>
         <ko-rect [config]="configSquareStage" #circle>
         </ko-rect>
-        <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
-        <ko-circle [config]="configCircle" (dragmove)="dragmove($event)" #circle></ko-circle>
+        <ko-circle [config]="configCircle1" (dragmove)="dragmove($event)" #circle></ko-circle>
+        <ko-circle [config]="configCircle2" (dragmove)="dragmove($event)" #circle></ko-circle>
       </ko-layer>
     </ko-stage>
     <button class="save-btn" (click)="handleClick($event)">Save</button>

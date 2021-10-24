@@ -51,9 +51,20 @@ export class SquareComponent implements OnInit {
     draggable: false,
   });
 
-  public configCircle: Observable<any> = of({
+  public configCircle1: Observable<any> = of({
     x: 100,
     y: 100,
+    radius: this.circleRadius,
+    fill: 'red',
+    stroke: 'black',
+    strokeWidth: 1,
+    draggable: true,
+    name: 'myCircle',
+  });
+
+  public configCircle2: Observable<any> = of({
+    x: 120,
+    y: 120,
     radius: this.circleRadius,
     fill: 'red',
     stroke: 'black',
