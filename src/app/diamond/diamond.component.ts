@@ -8,12 +8,15 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 })
 export class DiamondComponent implements OnInit {
   public WIDTH = 300;
-  public HEIGHT = 300;
+  public HEIGHT = this.WIDTH;
   public RADIUS = this.WIDTH / 2;
   public circleRadius = 10;
   public lastPosX = 0;
   public lastPosY = 0;
-  public rows = new Array(100);
+  public column = 10;
+  public row = this.column;
+  public gridWidth = this.WIDTH / this.column;
+  public rows = new Array(this.row * this.column);
 
   @ViewChild('stage', { static: false }) public stage!: KonvaComponent;
   @ViewChild('container', { static: false })
