@@ -20,6 +20,7 @@ export class SquareComponent implements OnInit {
   public circleRadius = 10;
   public lastPosX = 0;
   public lastPosY = 0;
+  public gridWidth = 30;
   public rows = new Array(100);
 
   @ViewChild('stage', { static: false }) public stage!: KonvaComponent;
