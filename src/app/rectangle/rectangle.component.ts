@@ -13,7 +13,10 @@ export class RectangleComponent implements OnInit {
   public circleRadius = 10;
   public lastPosX = 0;
   public lastPosY = 0;
-  public rows = new Array(170);
+  public row = 10;
+  public gridWidth = this.HEIGHT / this.row;
+  public column = Math.ceil(this.WIDTH / this.gridWidth);
+  public rows = new Array(this.row * this.column);
 
   @ViewChild('stage', { static: false }) public stage!: KonvaComponent;
   @ViewChild('container', { static: false })
